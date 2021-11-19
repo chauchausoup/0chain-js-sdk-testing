@@ -12,13 +12,13 @@ async function getFileStats() {
     // The js-client-sdk might take long to respond, as it queries all 6 blobbers before returning.
     // To get see each blobber response quicker, please console.log the return from each request on:
     // @zerochain/0chain/index.js
-    const fileStats = await jsClientSdk.getFileStatsFromPath(
+    const fileMeta = await jsClientSdk.getFileMetaDataFromPath(
       allocId, path, clientId, privateKey, publicKey
     )
-    console.log('File Stats', fileStats)
+    console.log('File Meta', fileMeta)
 
   } catch (e) {
-    console.error('File Stats error:', e)
+    console.error('File Meta error:', e)
   }
 }
 
