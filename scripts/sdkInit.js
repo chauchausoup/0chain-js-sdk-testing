@@ -3,9 +3,9 @@ const bls = require('bls-wasm')
 
 const getExplorerConfig = require('../lib/getExplorerConfig')
 
-const baseUrl = 'https://dev.0chain.net'
+async function sdkInit(network = 'dev') {
+  const baseUrl = `https://${network}.0chain.net`
 
-async function sdkInit() {
   const { error, explorer } = await getExplorerConfig(baseUrl)
 
   if (error) {
